@@ -1,0 +1,3 @@
+pip install python-telegram-bot
+
+I dont know what to write because i use GUI implementation of PIP on freaking android
