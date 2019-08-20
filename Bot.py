@@ -106,7 +106,7 @@ except Exception as ex:
 
 
 
-updater = telegram.ext.Updater(TThiIsShittiestTokenEver")
+updater = telegram.ext.Updater("TThiIsShittiestTokenEver")
 dispatcher = updater.dispatcher
 
 def TCommand(update, string):
