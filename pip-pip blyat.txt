@@ -1,3 +1,4 @@
 pip install python-telegram-bot
+pip install discord.py
 
 I dont know what to write because i use GUI implementation of PIP on freaking android
