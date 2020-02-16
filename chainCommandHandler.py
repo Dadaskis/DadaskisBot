@@ -18,7 +18,7 @@ try:
 	#chain.open("stalker half life.txt", 1)
 	#chain.open("stalker winner.txt", 1)
 	chain.open("sex shit.txt", 10)
-	#chain.open("Toxic.txt", 1)
+	chain.open("Toxic.txt", 1)
 	#chain.open("kamasutra.txt", 3)
 	
 	chain.open("ChainDefault.txt", 1)
