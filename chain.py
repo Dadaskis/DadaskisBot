@@ -30,7 +30,7 @@ class Chain:
 				#if string.find(symbol) > -1:
 					#print("hui")
 					#return
-		string = string.replace(".", ". %END")
+		#string = string.replace(".", ". %END")
 		string = string.replace("%end", "%END ")
 		string += " %END "
 		format = "a"
@@ -107,7 +107,7 @@ class Chain:
 				lastWord = newWord
 				skip = False
 				if lastWord.lower().find("%end") > -1:
-					if random.randint(0, 100) > 99:
+					if random.randint(0, 100) > 50:
 						lastWord = oldWord
 						skip = True
 					else:
@@ -119,7 +119,7 @@ class Chain:
 					words += " " + lastWord
 				else:
 					continue
-			if loopCounter > 500:
+			if loopCounter > 1000:
 				return self.getString(lastMessage, depth + 1)
 				break
 		with open("Chain" + self.Name + "Output.txt", "a", encoding = "utf-8") as file:

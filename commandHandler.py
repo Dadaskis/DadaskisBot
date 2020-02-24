@@ -30,5 +30,5 @@ class CommandHandler:
 						string = " "
 					return string
 			except Exception as ex:
-				print(ex)
+				continue#print(ex)
 		return " "

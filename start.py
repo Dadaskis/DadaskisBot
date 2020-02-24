@@ -42,14 +42,12 @@ for index in range(0, 1):
 		text = text.replace("- ", "")
 		for counter in range(0, 1):
 			chain.parse(text)'''
-#for counter in range(0, chain.Maximum):
-#	chain.parse("Свободная касса")
 
 command = CommandHandler()
 
-lastTimer = -60
+lastTimer = -606
 def StartTelegram():
-	updater = telegram.ext.Updater("812651832:AAGHo6vd4GsKq0UAH4GVt0MapdIto0x5dbU", use_context = True)
+	updater = telegram.ext.Updater("812651832:AAFyITJP_a0bn--9sfISeKiJMLf3rk8YnQ4", use_context = True)
 	dispatcher = updater.dispatcher
 	
 	interestingCat = "🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕\n🌕🌕🌘🌑🌓🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕\n🌕🌕🌑🌕🌕🌕🌗🌑🌑🌑🌕🌕🌕🌕🌕\n🌕🌕🌑🌕🌕🌖🌑👁🌑👁🌔🌗🌑🌕🌕\n🌕🌕🌘🌓🌕🌑🌑🌑🌑🌑🌔🌕🌘🌔🌕\n🌕🌕🌗🌑🌘🌑🌑🌑🌑🌑🌕🌖🌑🌕🌕\n🌕🌕🌕🌘🌑🌑🌑🌑🌑🌕🌖🌑🌔🌕🌕\n🌕🌕🌕🌖🌑🌑🌑🌑🌑🌑🌑🌔🌕🌕🌕\n🌕🌕🌕🌗🌑🌑🌑🌑🌑🌑🌕🌕🌕🌕🌕\n🌕🌕🌕🌘🌑🌕🌕🌘🌑🌔🌕🌕🌕🌕🌕\n🌕🌕🌕🌑🌓🌕🌕🌗🌑🌕🌕🌕🌕🌕🌕\n🌕🌕🌖🌑🌔🌕🌕🌖🌑🌔🌕🌕🌕🌕🌕\n🌕🌕🌗🌑🌕🌕🌕🌕🌑🌑🌕🌕🌕🌕🌕\n🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕🌕\n"
@@ -130,9 +128,9 @@ class DiscordDudka(discord.Client):
 def DStart():
 	try:
 		client = DiscordDudka()
-		client.run('NTIwODg0ODI4NDQzNTA4NzM2.XOsBDw.8qfD6lMt12Fsw9jB7kMIDXcfzEM')
+		client.run('NTIwODg0ODI4NDQzNTA4NzM2.XknWMg.Jgl-QHbzJJAKt2tPQU6vx3I9Gq8')
 	except Exception:
-		DStart()
+		pass#DStart()
 
 DStart()
 

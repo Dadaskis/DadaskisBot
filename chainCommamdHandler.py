@@ -9,7 +9,7 @@ try:
 	#chain.open("n3690.txt", 10)
 	#chain.open("Bible.txt", 1)
 	#chain.open("C++.txt", 10)
-	#chain.open("custom.txt", 100)
+	chain.open("custom.txt", 100000)
 	#chain.open("kodeks rf.txt", 5)
 	#chain.open("warhammer.txt", 1)
 	#chain.open("first stalker.txt", 1)
@@ -17,7 +17,7 @@ try:
 	#chain.open("rock stalker.txt", 1)
 	#chain.open("stalker half life.txt", 1)
 	#chain.open("stalker winner.txt", 1)
-	#chain.open("sex shit.txt", 3)
+	chain.open("sex shit.txt", 30000)
 	#chain.open("Toxic.txt", 1)
 	#chain.open("kamasutra.txt", 3)
 	
