@@ -99,7 +99,7 @@ class Chain:
 			newWord = keys[index]
 			foundKnown = False
 			for word in lastMessageSplit:
-				if word in keys and random.randint(0, 100) < 40 / len(lastMessageSplit) and word != lastWord:
+				if word in keys and random.randint(0, 100) < 70 and word != lastWord:
 					foundKnown = True
 					newWord = word
 			if random.randint(0, round(self.Maximum * 1.2)) >= count or foundKnown:
@@ -119,7 +119,7 @@ class Chain:
 					words += " " + lastWord
 				else:
 					continue
-			if loopCounter > 1000:
+			if loopCounter > 300:
 				return self.getString(lastMessage, depth + 1)
 				break
 		with open("Chain" + self.Name + "Output.txt", "a", encoding = "utf-8") as file:
