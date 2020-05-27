@@ -17,11 +17,11 @@ try:
 	#chain.open("rock stalker.txt", 1)
 	#chain.open("stalker half life.txt", 1)
 	#chain.open("stalker winner.txt", 1)
-	#chain.open("sex shit.txt", 3)
-	#chain.open("Toxic.txt", 1)
+	chain.open("sex shit.txt", 3)
+	chain.open("Toxic.txt", 1)
 	#chain.open("kamasutra.txt", 3)
 	
-	chain.open("ChainDefault.txt", 1)
+	chain.open("ChainDefault.txt", 0.2)
 except Exception as ex:
 	print(ex)
 	
@@ -35,7 +35,7 @@ class ChainCommandHandler:
         string = string.lower()
         
         for name in self.Names:
-        	string = string.replace(name, "")
+            string = string.replace(name, "")
         
         chain.parse(string)
         
@@ -49,24 +49,53 @@ class ChainCommandHandler:
         skipTimer = False
         
         if info.platform == "Telegram":
-        	if (info.telegramBot.get_chat(info.telegramUpdate.message.chat_id).description or "").find("DudkaNonStop") == -1:
-        		skipTimer = True
+    	    if (info.telegramBot.get_chat(info.telegramUpdate.message.chat_id).description or "").find("DudkaNonStop") == -1:
+                skipTimer = True
         
-        if (self.ChatTimer[chatName] + 0.2 > time.process_time()) and not skipTimer:
-            return False, ""
+        '''if (self.ChatTimer[chatName] + 0.2 > time.process_time()) and not skipTimer:
+            return False, ""'''
         
-        if self.ChatCounter[chatName] > 50:
-            self.ChatCounter[chatName] = 0
-            self.ChatTimer[chatName] = time.process_time()
-            return True, chain.getString(string)
+        if info.platform == "Telegram":
+            if self.ChatCounter[chatName] > 200:
+                self.ChatCounter[chatName] = 0
+                self.ChatTimer[chatName] = time.process_time()
+                resultString = ""
+                counter = 0
+                while len(resultString.split(" ")) > 10 or len(resultString.split(" ")) < 50:
+                    counter += 1
+                    if counter > 100:
+                        break
+                    if len(resultString.split(" ")) > 10 and len(resultString.split(" ")) < 50:
+                    	break
+                    resultString = chain.getString(string)
+                return True, resultString
         
         if info.botReply == True:
-            self.ChatTimer[chatName] = time.process_time()
-            return True, chain.getString(string)
+            #self.ChatTimer[chatName] = time.process_time()
+            resultString = ""
+            counter = 0
+            while len(resultString.split(" ")) > 10 or len(resultString.split(" ")) < 50:
+                counter += 1
+                if counter > 100:
+                    break
+                if len(resultString.split(" ")) > 10 and len(resultString.split(" ")) < 50:
+                	break
+                resultString = chain.getString(string)
+            return True, resultString
         
         for name in self.Names:
             name = name.lower()
             if string.find(name) > -1:
-                self.ChatTimer[chatName] = time.process_time()
-                return True, chain.getString(string)
+                #self.ChatTimer[chatName] = time.process_time()
+                #return True, chain.getString(string)
+            	resultString = ""
+            	counter = 0
+            	while len(resultString.split(" ")) > 10 or len(resultString.split(" ")) < 50:
+                	counter += 1
+                	if counter > 100:
+                		break
+                	if len(resultString.split(" ")) > 10 and len(resultString.split(" ")) < 50:
+                		break
+                	resultString = chain.getString(string)
+            	return True, resultString
         return False, ""
